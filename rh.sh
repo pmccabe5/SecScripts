@@ -13,7 +13,7 @@ echo "alias net-pf-4 off # IPX" >> /etc/modules.conf
 echo "alias net-pf-5 off # Appletalk" >> /etc/modules.conf
 echo "alias net-pf-10 off # IPv6" >> /etc/modules.conf
 echo "alias net-pf-12 off # Decnet" >> /etc/modules.conf 
-sudo yum install epel-release 
+sudo yum install epel-release -y
 yum install fail2ban fail2ban-system -y
 yum update -y selinux-policy*
 sudo systemctl start fail2ban
