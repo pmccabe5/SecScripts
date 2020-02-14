@@ -34,3 +34,5 @@ sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
 wget https://raw.github.com/emposha/Shell-Detector/master/shelldetect.py
 python shelldetect.py -r True -d ./
+echo "alias shells=\"python shelldetect.py -r True -d ./\"" >> ~/.bashrc
+exec bash
