@@ -34,3 +34,4 @@ sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
 wget https://raw.github.com/emposha/Shell-Detector/master/shelldetect.py
 python shelldetect.py -r True -d ./
+nmap -A $(ip addr show | grep ens192 | grep inet | awk '{print \$2}')
