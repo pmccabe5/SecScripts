@@ -4,7 +4,6 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1
 usermod -aG wheel $USER
 yum remove garbagepackage -y
 echo "PermitRootLogin no" >> /etc/ssh/sshd_config
-echo "Port 4516" >> /etc/ssh/sshd_config
 echo "Protocol 2" >> /etc/ssh/sshd_config
 echo "LogLevel VERBOSE" >> /etc/ssh/sshd_config
 sudo systemctl reload sshd.service
