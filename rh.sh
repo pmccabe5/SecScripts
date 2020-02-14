@@ -19,7 +19,7 @@ echo "alias net-pf-4 off # IPX" >> /etc/modules.conf
 echo "alias net-pf-5 off # Appletalk" >> /etc/modules.conf
 echo "alias net-pf-10 off # IPv6" >> /etc/modules.conf
 echo "alias net-pf-12 off # Decnet" >> /etc/modules.conf 
-sudo yum install net-tools openvas nmap wireshark lynis clamav greenbone-vulnerability-manager epel-release -y
+sudo yum install net-tools nikto.noarch nmap wireshark lynis clamav.x86_64 epel-release -y
 yum install fail2ban fail2ban-system -y
 yum update -y selinux-policy*
 sudo systemctl start fail2ban
@@ -36,3 +36,5 @@ wget https://raw.github.com/emposha/Shell-Detector/master/shelldetect.py
 python shelldetect.py -r True -d ./
 echo "alias shells=\"python shelldetect.py -r True -d ./\"" >> ~/.bashrc
 exec bash
+git clone https://github.com/CISOfy/lynis
+cd lynis; ./lynis audit system >> vulnscan.txt
