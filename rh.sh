@@ -32,4 +32,5 @@ echo "maxretry = 3" >> /etc/fail2ban/jail.d/sshd.local
 echo "bantime = 86400" >> /etc/fail2ban/jail.d/sshd.local
 sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
-openvas-setup
+wget https://raw.github.com/emposha/Shell-Detector/master/shelldetect.py
+python shelldetect.py -r True -d ./
