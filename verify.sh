@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Bash script to compare saved checksums with current checksums
 i=1
 while read line; do
