@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
-usermod -aG wheel $(USER)
+usermod -aG wheel $USER
 yum remove garbagepackage -y
 echo "PermitRootLogin no" >> /etc/ssh/sshd_conf
 echo "Port 4516" >> /etc/ssh/sshd_conf
@@ -20,7 +20,8 @@ echo "alias net-pf-4 off # IPX" >> /etc/modules.conf
 echo "alias net-pf-5 off # Appletalk" >> /etc/modules.conf
 echo "alias net-pf-10 off # IPv6" >> /etc/modules.conf
 echo "alias net-pf-12 off # Decnet" >> /etc/modules.conf 
-sudo yum install nmap wireshark lynis clamav epel-release -y
+sudo yum install net-tools openvas nmap wireshark \
+lynis clamav greenbone-vulnerability-manager epel-release -y
 yum install fail2ban fail2ban-system -y
 yum update -y selinux-policy*
 sudo systemctl start fail2ban
@@ -33,3 +34,4 @@ echo "maxretry = 3" >> /etc/fail2ban/jail.d/sshd.local
 echo "bantime = 86400" >> /etc/fail2ban/jail.d/sshd.local
 sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
+openvas-setup
