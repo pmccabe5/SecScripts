@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
-usermod -aG wheel $(whoami)
-yum remove garbagepackage -y
+sudo usermod -aG wheel $(whoami)
+sudo yum remove garbagepackage -y
 echo "PermitRootLogin no" >> /etc/ssh/sshd_config
 echo "Protocol 2" >> /etc/ssh/sshd_config
 echo "LogLevel VERBOSE" >> /etc/ssh/sshd_config
@@ -20,8 +20,8 @@ echo "alias net-pf-5 off # Appletalk" >> /etc/modules.conf
 echo "alias net-pf-10 off # IPv6" >> /etc/modules.conf
 echo "alias net-pf-12 off # Decnet" >> /etc/modules.conf 
 sudo yum install net-tools nikto.noarch nmap wireshark lynis clamav.x86_64 epel-release -y
-yum install fail2ban fail2ban-system -y
-yum update -y selinux-policy*
+sudo yum install fail2ban fail2ban-system -y
+sudo yum update -y selinux-policy*
 sudo systemctl start fail2ban
 sudo systemctl enable fail2ban
 echo "[sshd]" >> /etc/fail2ban/jail.d/sshd.local
