@@ -38,3 +38,4 @@ echo "alias shells=\"python shelldetect.py -r True -d ./\"" >> ~/.bashrc
 exec bash
 git clone https://github.com/CISOfy/lynis
 cd lynis; ./lynis audit system >> vulnscan.txt
+echo "Script is done running"
