@@ -15,6 +15,7 @@ echo "net.ipv4.icmp.ignore_bogus_error_responses=1" >> /etc/sysctl.conf
 echo "net.ipv4.conf.default.accept_source_route=0" >> /etc/sysctl.conf
 echo "net.ipv4.conf.all.accept_source_route=0" >> /etc/sysctl.conf
 echo "net.ipv4.icmp_echo_ignore_broadcasts=1" >> /etc/sysctl.conf
+echo "[+] /etc/sysctl.conf is configuresd"
 echo "alias net-pf-4 off # IPX" >> /etc/modules.conf
 echo "alias net-pf-5 off # Appletalk" >> /etc/modules.conf
 echo "alias net-pf-10 off # IPv6" >> /etc/modules.conf
@@ -32,10 +33,21 @@ echo "maxretry = 3" >> /etc/fail2ban/jail.d/sshd.local
 echo "bantime = 86400" >> /etc/fail2ban/jail.d/sshd.local
 sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
+echo "[+] Fail2ban is configures"
 wget https://raw.github.com/emposha/Shell-Detector/master/shelldetect.py
 python shelldetect.py -r True -d ./
 echo "alias shells=\"python shelldetect.py -r True -d ./\"" >> ~/.bashrc
 exec bash
 git clone https://github.com/CISOfy/lynis
 cd lynis; ./lynis audit system >> vulnscan.txt
+echo "[+] Lynis scan is done"
+useradd pmccabe
+useradd bbillings
+useradd mwalter
+useradd cmeyers
+useradd dmeeder
+useradd lmcguire
+useradd spappas
+useradd nkakadia
+echo "[!!] Users have been added, CHANGE THE PASSWORDS"
 echo "Script is done running, implement box firewall rules"
