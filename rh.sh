@@ -31,8 +31,7 @@ echo "port = 22" >> /etc/fail2ban/jail.d/sshd.local
 echo "logpath = /var/log/auth.log" >> /etc/fail2ban/jail.d/sshd.local
 echo "maxretry = 3" >> /etc/fail2ban/jail.d/sshd.local
 echo "bantime = 86400" >> /etc/fail2ban/jail.d/sshd.local
-sudo systemctl enable fail2ban
-sudo systemctl start fail2ban
+sudo systemctl restart fail2ban
 echo "[+] Fail2ban is configured"
 wget https://raw.github.com/emposha/Shell-Detector/master/shelldetect.py
 python shelldetect.py -r True -d ./
