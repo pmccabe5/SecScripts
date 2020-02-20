@@ -19,7 +19,7 @@ echo "alias net-pf-4 off # IPX" >> /etc/modules.conf
 echo "alias net-pf-5 off # Appletalk" >> /etc/modules.conf
 echo "alias net-pf-10 off # IPv6" >> /etc/modules.conf
 echo "alias net-pf-12 off # Decnet" >> /etc/modules.conf 
-sudo yum install net-tools nikto.noarch nmap wireshark lynis clamav.x86_64 epel-release -y
+sudo yum install net-tools nikto.noarch nmap wireshark clamav.x86_64 epel-release -y
 sudo yum install fail2ban fail2ban-system -y
 sudo yum update -y selinux-policy*
 sudo systemctl start fail2ban
