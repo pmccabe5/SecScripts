@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 files="/etc/passwd /etc/shadow"
 user=$(whoami)
-dst="/home/$user/"
+dst="/home/$user"
 day=$(date +%Y-%m-%d)
 host=$(hostname -s)
 archive="$host-$day.tar.gz"
