@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-files="/etc/passwd /etc/shadow"
+files="/etc/passwd /etc/shadow /etc/sudoers"
 user=$(whoami)
 dst="/home/$user"
 day=$(date +%Y-%m-%d)
