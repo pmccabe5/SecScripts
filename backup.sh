@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 files="/etc/passwd /etc/shadow /etc/sudoers"
 user=$(whoami)
-dst="/home/$user"
+dst="/root/backups"
 day=$(date +%Y-%m-%d)
 host=$(hostname -s)
 archive="$host-$day.tar.gz"
