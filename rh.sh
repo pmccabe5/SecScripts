@@ -16,7 +16,7 @@ echo "net.ipv4.icmp.ignore_bogus_error_responses=1" >> /etc/sysctl.conf
 echo "net.ipv4.conf.default.accept_source_route=0" >> /etc/sysctl.conf
 echo "net.ipv4.conf.all.accept_source_route=0" >> /etc/sysctl.conf
 echo "net.ipv4.icmp_echo_ignore_broadcasts=1" >> /etc/sysctl.conf
-echo "[+] /etc/sysctl.conf is configuresd"
+echo "[+] /etc/sysctl.conf is configured"
 echo "alias net-pf-4 off # IPX" >> /etc/modules.conf
 echo "alias net-pf-5 off # Appletalk" >> /etc/modules.conf
 echo "alias net-pf-10 off # IPv6" >> /etc/modules.conf
