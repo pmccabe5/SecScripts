@@ -4,6 +4,7 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1
 usermod -aG wheel $(whoami)
 yum remove garbagepackage -y
 yum install epel-release -y
+echo "#Port 4516" >> /etc/ssh/sshd_config
 echo "#PermitRootLogin no" >> /etc/ssh/sshd_config
 echo "#Protocol 2" >> /etc/ssh/sshd_config
 echo "#LogLevel VERBOSE" >> /etc/ssh/sshd_config
