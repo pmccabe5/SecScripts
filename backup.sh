@@ -2,7 +2,7 @@
 files="/etc/passwd /etc/shadow /etc/sudoers"
 user=$(whoami)
 dst="/home/backups"
-mkdir $dst
+sudo mkdir $dst
 day=$(date +%Y-%m-%d)
 host=$(hostname -s)
 archive="$host-$day.tar.gz"
